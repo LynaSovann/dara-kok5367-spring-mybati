@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: dara-kok5367-spring-mybati-container
-          image: pipejet/dara-kok5367-spring-mybati:0
+          image: pipejet/dara-kok5367-spring-mybati:1
           ports:
             - containerPort: 8080
