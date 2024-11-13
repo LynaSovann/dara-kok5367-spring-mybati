@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dara-kok5367-spring-mybati-service
+spec:
+  type: NodePort
+  selector:
+    app: dara-kok5367-spring-mybati
+  ports:
+    - protocol: TCP
+      port: 8180
+      targetPort: 8080
