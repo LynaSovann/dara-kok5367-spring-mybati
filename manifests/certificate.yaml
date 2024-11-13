@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: dara-kok5367-spring-mybati-certificate
+  namespace: dara-kok5367-spring-mybati
+spec:
+  secretName: dara-kok5367-spring-mybati-secret-tls
+  commonName: spring.langnet.info
+  dnsNames:
+  - spring.langnet.info
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
