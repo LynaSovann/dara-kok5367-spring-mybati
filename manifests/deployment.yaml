@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dara-kok5367-spring-mybati-deployment
+  labels:
+    app: dara-kok5367-spring-mybati
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dara-kok5367-spring-mybati
+  template:
+    metadata:
+      labels:
+        app: dara-kok5367-spring-mybati
+    spec:
+      containers:
+        - name: dara-kok5367-spring-mybati-container
+          image: pipejet/dara-kok5367-spring-mybati:0
+          ports:
+            - containerPort: 8080
