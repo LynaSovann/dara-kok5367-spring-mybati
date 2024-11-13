@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dara-kok5367-spring-mybati-https-ingress
+  namespace: dara-kok5367-spring-mybati
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - spring.langnet.info
+      secretName: dara-kok5367-spring-mybati-secret-tls
+  rules:
+    - host: spring.langnet.info
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: dara-kok5367-spring-mybati-service
+                port:
+                  number: 8180
